@@ -1,17 +1,5 @@
 {
 	"files.associations": {
-		"ostream": "cpp",
-		"iostream": "cpp",
-		"stdexcept": "cpp",
-		"any": "cpp",
-		"optional": "cpp",
-		"variant": "cpp",
-		"hash_map": "cpp",
-		"*.tcc": "cpp",
-		"deque": "cpp",
-		"list": "cpp",
-		"string": "cpp",
-		"unordered_map": "cpp",
-		"vector": "cpp"
+		"iostream": "cpp"
 	}
 }
