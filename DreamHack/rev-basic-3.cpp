@@ -9,7 +9,7 @@ int main(void) {
 
     for (int i = 0; i < 24; i++){
         int k = (i ^ (arr[i] - 2 * i));
-        cout << (char)k << " ";
+        cout << (char)k;
     }
 
     return 0;
