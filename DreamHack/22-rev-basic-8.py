@@ -1,14 +1,12 @@
 import binascii
 
-#data3000 = "AC F3 0C 25 A3 10 B7 25 16 C6 B7 BC 07 25 02 D5 C6 11 07 C5 00 00 00 00 00 00 00 00 00 00 00 00".replace(" ", "")
-data3000 = [0x0AC, 0x0F3, 0x0C, 0x25, 0x0A3, 0x10, 0x0B7, 0x25, 0x16, 0x0C6, 0x0B7, 0x0BC, 0x7, 0x25, 0x2, 0x0D5, 0x0C6, 0x11, 0x7, 0x0C5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]
-#data3000 = binascii.unhexlify(data3000)
+output = "AC F3 0C 25 A3 10 B7 25 16 C6 B7 BC 07 25 02 D5 C6 11 07 C5 00".replace(" ", "")
+output = binascii.unhexlify(output)
 input = ""
-for i in range(0x16):
-    a = data3000[i] * 0b11111011  
-    #a = int(a)
-    a=a%256
-    input += chr(a)
-    print(a)
 
+for i in range(len(output)):
+    for j in range(256):
+        if (j * 251) & 255 == output[i]: #0xfb = -5 = 0b11111011
+            input += chr(j)
+            
 print(input)
